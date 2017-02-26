@@ -1,0 +1,26 @@
+{
+  "name": "hackernews.katrotz.space",
+  "version": "0.1.0",
+  "description": "Frontend implementation of a hackernews clone based on Angular",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katrotz/hackernews-fe.git"
+  },
+  "keywords": [
+    "ycombinator",
+    "news",
+    "hackernews",
+    "katrotz.space",
+    "angular"
+  ],
+  "author": "katrotz@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/katrotz/hackernews-fe/issues"
+  },
+  "homepage": "https://github.com/katrotz/hackernews-fe#readme"
+}
