@@ -1,0 +1,1 @@
+The files in the `build` directory are automatically generated on build
