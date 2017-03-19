@@ -8,7 +8,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
   entry: 'src/app/scripts.js',
-  dest: 'src/assets/scripts/scripts.js',
+  dest: 'src/assets/scripts/build/scripts.js',
   sourceMap: true,
   format: 'iife',
   context: 'window',
@@ -19,7 +19,7 @@ export default {
       main: true,
       skip: [],
       browser: true,
-      extensions: ['js', 'json'],
+      extensions: ['.js', '.json'],
       preferBuiltins: true
     })
   ]

@@ -3,20 +3,20 @@
  */
 import babel from 'rollup-plugin-babel';
 import angular from 'rollup-plugin-angular'; //https://github.com/cebor/rollup-plugin-angular
-// import uglify from 'rollup-plugin-uglify';
+import uglify from 'rollup-plugin-uglify';
 
 export default {
   sourceMap: true,
   entry: 'src/app/index.js',
-  dest: 'src/assets/scripts/app.js',
+  dest: 'src/assets/scripts/build/app.js',
   moduleName: 'hackernews',
   format: 'iife',
   plugins: [
+    angular(),
     babel({
       exclude: 'node_modules/**'
     }),
-    angular()
-    // uglify()
+    uglify()
   ],
   external: [
     '@angular/common',
@@ -26,24 +26,20 @@ export default {
     '@angular/http',
     '@angular/platform-browser',
     '@angular/platform-browser-dynamic',
-    '@angular/upgrade',
-    '@angular/upgrade/static',
-    'rxjs/Observable',
-    'rxjs/Subject',
+    '@angular/router',
+    'rxjs/Rx',
     'lodash'
   ],
   globals: {
-    '@angular/common' : 'ng.common',
-    '@angular/compiler' : 'ng.compiler',
-    '@angular/core' : 'ng.core',
-    '@angular/forms' : 'ng.forms',
-    '@angular/http' : 'ng.http',
-    '@angular/platform-browser' : 'ng.platformBrowser',
-    '@angular/platform-browser-dynamic' : 'ng.platformBrowserDynamic',
-    '@angular/upgrade' : 'ng.upgrade',
-    '@angular/upgrade/static' : 'ng.upgrade.static',
-    'rxjs/Observable': 'Rx.Observable',
-    'rxjs/Subject': 'Rx.Subject',
-    'lodash' : '_',
+    '@angular/common' : 'vendors._angular_common',
+    '@angular/compiler' : 'vendors._angular_compiler',
+    '@angular/core' : 'vendors._angular_core',
+    '@angular/forms' : 'vendors._angular_forms',
+    '@angular/http' : 'vendors._angular_http',
+    '@angular/platform-browser' : 'vendors._angular_platformBrowser',
+    '@angular/platform-browser-dynamic' : 'vendors._angular_platformBrowserDynamic',
+    '@angular/router' : 'vendors._angular_router',
+    'lodash' : 'vendors._',
+    'rxjs/Rx' : 'vendors.Rx'
   }
 };

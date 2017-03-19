@@ -5,29 +5,26 @@
  */
 
 import nodeResolve from 'rollup-plugin-node-resolve';
-import cjsResolve from 'rollup-plugin-commonjs';
 import rxjsResolve from './plugins/rollup-plugin-rxjs-resolve';
 
 export default {
   entry: 'src/app/vendors.js',
-  dest: 'src/assets/scripts/vendors.js',
+  dest: 'src/assets/scripts/build/vendors.js',
   moduleName: 'vendors',
   sourceMap: true,
   format: 'iife',
   context: 'window',
   plugins: [
     rxjsResolve(),
+
     nodeResolve({
-      module: false,
-      jsnext: false,
+      module: true,
+      jsnext: true,
       main: true,
       skip: [],
       browser: true,
-      extensions: ['js', 'json'],
+      extensions: ['.js', '.json'],
       preferBuiltins: true
-    }),
-    cjsResolve({
-      include: 'node_modules/rxjs/**'
     })
   ]
 };
